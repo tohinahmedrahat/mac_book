@@ -1,4 +1,4 @@
-
+// decleare funtion to get element from id and get total value
 function total(){
     // best price
     const bestPrice = document.getElementById("best-price");
@@ -22,57 +22,58 @@ function total(){
    return totalValue;
 
 }
-
-document.getElementById("frist-memory").addEventListener('click',function(){
-    const memory = document.getElementById("extra-memory");
-    memory.innerText=0;
+// totalprice for mac funtion
+function totalPrice(){
     const totalValue = total();
      const totalText = document.getElementById("total");
     totalText.innerText= totalValue;
+    // get total-price
+    const totalPrice = document.getElementById("total-price");
+    totalPrice.innerText=totalValue;
+}
+// add memory funtion
+document.getElementById("frist-memory").addEventListener('click',function(){
+    const memory = document.getElementById("extra-memory");
+    memory.innerText=0;
+    totalPrice();
     
-})
+});
 document.getElementById("second-memory").addEventListener('click',function(){
     const memory = document.getElementById("extra-memory");
-    memory.innerText=158;
-       const totalValue = total();
-     const totalText = document.getElementById("total");
-    totalText.innerText= totalValue;
-})
+    memory.innerText=180;
+    totalPrice();
+});
+// end memory funtion
+// start storage funtion
 document.getElementById("frist-storage").addEventListener('click',function(){
     const memory = document.getElementById("extra-storage");
     memory.innerText=0;
-       const totalValue = total();
-     const totalText = document.getElementById("total");
-    totalText.innerText= totalValue;
-})
+    totalPrice();
+});
 document.getElementById("second-storage").addEventListener('click',function(){
     const memory = document.getElementById("extra-storage");
     memory.innerText=100;
-       const totalValue = total();
-     const totalText = document.getElementById("total");
-    totalText.innerText= totalValue;
-})
+      totalPrice();
+});
 document.getElementById("third-storage").addEventListener('click',function(){
     const memory = document.getElementById("extra-storage");
-    memory.innerText=158;
-      const totalValue = total();
-     const totalText = document.getElementById("total");
-    totalText.innerText= totalValue;
+    memory.innerText=180;
+     totalPrice();
 });
+// end storage funtion
+// start delivery funtion
 document.getElementById("free-delivery").addEventListener('click',function(){
     const memory = document.getElementById("delivery-cost");
     memory.innerText=0;
-      const totalValue = total();
-     const totalText = document.getElementById("total");
-    totalText.innerText= totalValue;
+     totalPrice();
 });
 document.getElementById("cost-delivery").addEventListener('click',function(){
     const memory = document.getElementById("delivery-cost");
     memory.innerText=20;
-      const totalValue = total();
-     const totalText = document.getElementById("total");
-    totalText.innerText= totalValue;
+     totalPrice();
 });
+// end delivery funtion
+// pomo code funtion
 document.getElementById("pomocode-btn").addEventListener("click",function(){
     const totalValue = total();
     const totalDiscount = 0.20 * totalValue;
@@ -85,9 +86,9 @@ document.getElementById("pomocode-btn").addEventListener("click",function(){
     const inputValue = input.value;
     const inputText = inputValue.toLowerCase();
     input.value = " ";
-    if(inputText == 'stevkaku'){
+    if(inputText == 'stevekaku'){
         totalPrice.innerText= totalValueDiscount;
     }else{
-        console.log('sorry kaku was angray')
+        alert('sorry kaku was angray');
     }
-})
+});
